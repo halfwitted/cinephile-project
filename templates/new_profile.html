@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<HTML lang="=en">
+    <head>
+        {% load static %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
+    
+        <title>cinephile</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color:#74cfbf;">
+                        <a class="navbar-brand" href="{% url 'index' %}"><b>Cinephile</b></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                        </div>
+                      </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12"style="margin: 5rem auto 0 auto;text-align: center;">
+                <p class="display-3">
+                    Cinephile
+                </p><hr>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="display-4">
+                        Create your profile here
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <form method="POST" action="/cinephile/createprof/{{user.id}}">
+                        {% csrf_token %}
+                       
+                        <div class="mb-3">
+                            <input type="text" aria-label="First name" class="form-control" placeholder="First name" name="f_name" id="f_name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" aria-label="Last name" class="form-control" placeholder="Last name" name="l_name" id="l_name">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="bio" id="bio" rows="4" placeholder="Bio"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pen_name">Pen name</label>
+                            <input class="form-control" type="text" placeholder="{{user.username}}" name="pen_name" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="user_email">E-mail</label>
+                            <input class="form-control" type="text" placeholder="{{user.email}}" name="user_email" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-info">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid" style="margin-bottom: 20rem;">
+            <div class="row">
+                <footer class="fixed-bottom navbar-light" style="background-color:#ccffcc;">
+                    <div class="container">
+                        <div class="row md-5">
+                           <p class="col-12 text-center" >
+                            <br>
+                                Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved |  Made with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg> from <a href="https://github.com/halfwitted" target="_blank" class="text-primary">Abhishek</a>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</HTML>
