@@ -91,7 +91,11 @@ WSGI_APPLICATION = 'cinephile.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'dd9fk2mfqohr7n',
+        'HOST': 'ec2-54-161-255-125.compute-1.amazonaws.com',
+        'PORT':5432,
+        'USER':'lksenwzklcdmey',
+        'PASSWORD': '77a7ce03052398798769ebdd1faf17cb745ca4acaef2078e2dca6cbdc875f55c'
     }
 }
 
