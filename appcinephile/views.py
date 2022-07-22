@@ -125,9 +125,12 @@ def details(request,movie_id):
     querystring = {"i":movie_id,"r":"json","plot":"short"}
 
     headers = {
-        'x-rapidapi-key': "536a80352fmsh9fe1db0bb92793cp1b822bjsnea8bd7e9ba57",
+        'x-rapidapi-key': "855323c238msh7709c704bff719cp1dafd0jsn53afaa21d39b",
         'x-rapidapi-host': "movie-database-imdb-alternative.p.rapidapi.com"
         }
+
+
+
 
     response = requests.request("GET", url, headers=headers, params=querystring)
     temp = response.json()
@@ -181,7 +184,7 @@ def searchquery(request):
     
 
     headers = {
-        'x-rapidapi-key': "536a80352fmsh9fe1db0bb92793cp1b822bjsnea8bd7e9ba57",
+        'x-rapidapi-key': "855323c238msh7709c704bff719cp1dafd0jsn53afaa21d39b",
         'x-rapidapi-host': "movie-database-imdb-alternative.p.rapidapi.com"
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
@@ -197,7 +200,7 @@ def addreview(request,movie_id,id):
     querystring = {"i":movie_id,"r":"json","plot":"short"}
 
     headers = {
-        'x-rapidapi-key': "536a80352fmsh9fe1db0bb92793cp1b822bjsnea8bd7e9ba57",
+        'x-rapidapi-key': "855323c238msh7709c704bff719cp1dafd0jsn53afaa21d39b",
         'x-rapidapi-host': "movie-database-imdb-alternative.p.rapidapi.com"
         }
 
@@ -240,7 +243,7 @@ def recommend(request,movie_id,id):
     querystring = {"i":movie_id,"r":"json","plot":"short"}
 
     headers = {
-        'x-rapidapi-key': "536a80352fmsh9fe1db0bb92793cp1b822bjsnea8bd7e9ba57",
+        'x-rapidapi-key': "855323c238msh7709c704bff719cp1dafd0jsn53afaa21d39b",
         'x-rapidapi-host': "movie-database-imdb-alternative.p.rapidapi.com"
         }
 
